@@ -1,0 +1,85 @@
+header.header
+    .container
+        .header__container
+            .header__top
+                |ГК СОТРАНС — генеральный дистрибьютор HARBINGER™
+                .header__mail
+                    svg.icon.icon_sm
+                        use(href="/src/assets/img/sprite.svg#Mail")
+                    a(href="mailto:support@harbinger-tech.ru") support@harbinger-tech.ru
+            .header__bottom
+                a.header__logo(href="/")
+                    include ../../../assets/img/header/logo.svg
+                menu.header__menu
+                    a.header__menu-item(href="/")  Главная
+                    a.header__menu-item(href="/catalog")  Каталог
+                    a.header__menu-item(href="/about")  О компании
+                    a.header__menu-item(href="/news")  Новости
+                .header__contacts
+                    .header__phone-container
+                        .header__phone
+                            svg.icon.icon_sm
+                                use(href="/src/assets/img/sprite.svg#Phone")
+                            a(href="tel:88002000233") 8 (800) 200-02-33
+                        button.header__phone-text(data-form="question") Перезвоните мне
+                    .header__social
+                        a(href='tg')
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#tg")
+                        a(href='wa')
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#wa")
+        .header__container.header__container_mobile
+            .header__bottom
+                a.header__logo(href="/")
+                    include ../../../assets/img/header/logo_mob.svg
+                .header__bottom-right
+                    a(href="tel:88002000233")
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Phone")
+                    .header__burger
+                        span.header__burger-line.header__burger-line_top
+                        span.header__burger-line.header__burger-line_middle
+                        span.header__burger-line.header__burger-line_bottom
+            menu.header__menu.header__menu_mobile
+                .header__menu-top
+                    a(href="tel:88002000233")
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Phone")
+                        |8 800 200 02 33 (отдел продаж)
+                    button.header__menu-callme(data-form="question")
+                        svg.icon
+                            use(href='/src/assets/img/sprite.svg#callme')
+                        |Перезвоните мне
+                each item in headerMenuMobile
+                    .header__menu-block
+                        .header__menu-title
+                            |!{item.title}
+                        ul.menu__block-items
+                            each listItem in item.options
+                                li.menu__block-item
+                                   a(href="javaScript:") !{listItem}
+                .header__menu-bottom
+                    .header__menu-mail
+                        a(href="mailto:support@harbinger-tech.ru")
+                            svg.icon_sm
+                                use(href="/src/assets/img/sprite.svg#Mail")
+                            |support@harbinger-tech.ru
+                    .header__menu-schedule
+                        svg.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Timer")
+                        |Пн–Пт: с 9:00 до 21:00
+                    .header__menu-location
+                        svg.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Map_Pin")
+                        | Россия, 187015, Ленинградская обл., пгт. Красный Бор, ул. Промышленная, д. 3
+                    .header__menu-socials
+                        a(href='tg')
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#tg")
+                        a(href='wa')
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#wa")
+
+
+

@@ -1,0 +1,25 @@
+
+block variables
+  include ../../variables
+
+block mixins
+  include ../../mixins/main-grid
+  include ../../mixins/contact-form
+  include ../../mixins/bread-crumbs
+  include ../../mixins/up-button
+
+doctype html
+html(lang="ru")
+  head
+    link(rel="stylesheet" href="/src/styles/app.sass")
+    script(type='module' src="/src/scripts/app.js")
+    include head
+  body
+    include header
+    include ../../global/question-form
+    include ../../global/preloader
+    main.main
+      +up-button
+      block content
+    include footer
+

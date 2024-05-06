@@ -1,0 +1,53 @@
+footer.footer
+    .footer__top
+        .container
+            .footer__top-about
+                include ../../../assets/img/footer/logo_footer.svg
+                .footer__top-text
+                    | Продукция HARBINGER™ изготавливается на высокотехнологичных предприятиях в Турции и Китае, которые на протяжении последних десятилетий поставляют комплектующие для ведущих производителей коммерческой техники на конвейер.
+            .footer__top-contacts
+                .footer__top-contact
+                    a(href="mailto:support@harbinger-tech.ru").footer__top-link
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Mail")
+                        | support@harbinger-tech.ru
+                .footer__top-contact
+                    div.footer__top-link
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Timer")
+                        | Пн–Пт: с 9:00 до 21:00
+                .footer__top-contact
+                    div.footer__top-link
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Map_Pin")
+                        | Россия, 187015, Ленинградская обл., пгт. Красный Бор, ул. Промышленная, д. 3
+                .footer__top-contact
+                    a(href="tel:88002000233").footer__top-link
+                        svg.icon.icon_sm
+                            use(href="/src/assets/img/sprite.svg#Phone")
+                        | 8 800 200 02 33 (отдел продаж)
+            each category in footerCategories
+                .footer__top-category
+                    .footer__top-title !{category.title}
+                        .footer__top-links
+                            each item in category.items
+                                a(href=":javascript").footer__top-link !{item}
+
+
+    .footer__bottom
+        .container
+            .footer__bottom-rights
+                | SOTRANS PARTS | © 2024 | Все права защищены
+            .footer__bottom-links
+                a(href="/privacy") Политика конфиденциальности
+                a(href="/terms") Условия пользования сайтом
+            .footer__bottom-socials
+                a(href='tg')
+                    svg.icon
+                        use(href="/src/assets/img/sprite.svg#tg")
+                a(href='wa')
+                    svg.icon
+                        use(href="/src/assets/img/sprite.svg#wa")
+
+
+
