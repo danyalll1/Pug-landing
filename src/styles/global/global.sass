@@ -1,0 +1,128 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  scroll-behavior: smooth
+  min-height: 100vh
+
+body
+  font-family: $font
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  position: relative
+
+  &.fixed
+    position: fixed
+
+a
+  color: $text-black
+  text-decoration: none
+  display: block
+  transition: color .3s, opacity .3s, background-color .3s
+  outline: none
+  position: relative
+
+h1, h2, h3, h4, p
+  margin: 0
+
+button
+  appearance: none
+  border: none
+  cursor: pointer
+  padding: 0
+  background: transparent
+  transition: .3s
+  position: relative
+  outline: none
+
+svg, img
+  max-width: 100%
+  max-height: 100%
+  transition: .3s
+
+  path, circle, rect
+    transition: .3s
+
+ul
+  padding: 0
+  margin: 0
+
+  li
+    list-style-type: none
+
+input, textarea
+  border-radius: 0
+  border: none
+  appearance: none
+  outline: none
+  width: 100%
+  height: 100%
+  background: transparent
+  box-sizing: border-box
+  padding: 0
+
+textarea
+  resize: none
+
+.header, footer
+  flex: 0 0
+
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+
+section
+  overflow: hidden
+  position: relative
+
+.container
+  max-width: 1440px
+  padding: 0 10px
+  margin: 0 auto
+  +screen($tablet-sm)
+    padding: 0 16px
+
+.main
+  position: relative
+  height: 100%
+  padding-bottom: 32px
+
+  &_dev , &_not-found
+    padding: 0
+
+
+.icon
+  width: 24px
+  height: 24px
+  stroke: $icon-grey
+  fill: transparent
+
+
+.section-title
+  +font(56px, 64px, 600)
+  +screen($tablet-sm)
+    +font(32px, 40px, 600)
+
+.top
+  height: 998px
+  padding-top: 160px
+  padding-bottom: 128px
+  display: flex
+  align-items: flex-start
+  flex-direction: column
+  justify-content: flex-end
+  +screen($tablet-sm)
+    height: 544px
+    padding-top: 88px
+    padding-bottom: 64px
+
+
+

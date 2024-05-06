@@ -1,0 +1,193 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.question-form, .question-form__success-container
+  transition: visibility ease 0.3s, opacity ease 0.3s, position ease 0.3s
+  position: relative
+  background-color: $bg-grey
+  padding: 40px
+  max-width: 460px
+  border-radius: 8px
+  +screen($tablet-sm)
+    padding: 32px 16px
+
+  .icon
+    stroke: $text-grey
+
+  &__container
+    opacity: 0
+    transition: visibility ease 0.3s, opacity ease 0.3s
+    padding: 16px
+    position: fixed
+    z-index: 300
+    background-color: rgba(0,0,0,0.3)
+    width: 100%
+    height: 100%
+    display: flex
+    visibility: hidden
+    align-items: center
+    justify-content: center
+
+    &.success
+
+      .question-form
+        visibility: hidden
+        opacity: 0
+        display: none
+
+      .question-form__success-container
+        visibility: visible
+        opacity: 1
+        position: relative
+
+    &.active
+      opacity: 1
+      visibility: visible
+
+  &__title
+    +font(28px, 36px, 400)
+    text-align: center
+
+  &__subtitle
+    margin-top: 16px
+    +font(18px, 24px, 400)
+    text-align: center
+
+  &__input
+    width: 100%
+    +font(20px, 24px, 400)
+
+    &-area
+      margin-top: 16px
+      padding: 12px
+      position: relative
+      transition: border ease 0.3s
+      border: 1px solid transparent
+      background-color: $bg-white
+      border-radius: 4px
+      +font(20px, 24px, 400)
+      display: flex
+      justify-content: space-between
+
+      &:first-child
+        margin-top: 32px
+
+
+
+      &:focus-within
+        .question-form__input
+          transform: translateY(6px)
+
+          &-label
+            font-size: 12px
+            line-height: 16px
+            left: 12px
+            top: 4px
+
+      &.active
+
+        .question-form__input
+          transform: translateY(6px)
+
+          &-label
+            font-size: 12px
+            line-height: 16px
+            left: 12px
+            top: 4px
+
+      &.error
+        border: 1px solid $status-error
+
+        .icon
+          stroke: $status-error
+
+        .question-form__input
+          color: $status-error
+
+          &-label
+            color: $status-error
+
+    &-label
+      transition: all ease 0.3s
+      pointer-events: none
+      color: $text-grey
+      +font(20px, 24px, 400)
+      position: absolute
+      top: 12px
+      left: 12px
+
+  &__button
+    background-color: $button-primary-default
+    color: $text-white
+    width: 100%
+    padding: 12px
+    margin-top: 24px
+    +font(20px, 24px, 400)
+    border-radius: 4px
+    +mb-screen($tablet-sm+1)
+      &:hover
+        background-color: $button-primary-hover
+
+  &__terms
+    margin-top: 12px
+    +font(14px,20px, 400)
+    text-align: center
+
+    &-link
+      display: inline
+      cursor: pointer
+      text-decoration: underline
+      +mb-screen($tablet-sm+1)
+        &:hover
+          color: $text-orange
+
+  &__close
+    transition: border ease 0.3s
+    border: 1px solid transparent
+    cursor: pointer
+    position: absolute
+    top: 0
+    right: -56px
+    background-color: $bg-grey
+    width: 48px
+    height: 48px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 8px
+    +mb-screen($tablet-sm+1)
+      &:hover
+        border:  1px solid  #BBB
+
+        .icon
+          fill:  $button-primary-default
+          stroke: $button-primary-default
+
+    +screen($tablet-sm+1)
+      right: 0
+      top: -56px
+
+    .icon
+      stroke: $icon-grey
+
+  &__success
+
+    &-container
+      position: absolute
+      opacity: 0
+      visibility: hidden
+
+    &-image, &-title, &-subtitle
+      text-align: center
+      .icon
+        width: 48px
+        height: 48px
+        stroke: none
+
+    &-title
+      +font(28px, 36px, 400)
+      margin-top: 32px
+
+    &-subtitle
+      margin-top: 16px
+      +font(18px, 24px, 400)

@@ -1,0 +1,31 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.parts
+  margin-top: 128px
+  +screen($tablet-sm)
+    margin-top: 64px
+  .container
+    display: flex
+    gap: 20px
+    +screen($tablet-sm)
+      flex-direction: column
+      gap: 40px
+
+  &__title
+    +font(56px, 64px, 600)
+    span
+      display: inline-block
+      color: $text-orange
+    +screen($tablet-sm)
+      max-width: 100%
+      +font(32px, 40px, 600)
+
+  &__text
+    +font(18px, 24px, 400)
+    &-container
+      display: flex
+      flex-direction: column
+      gap: 24px
+      +screen($tablet-sm)
+        gap: 16px

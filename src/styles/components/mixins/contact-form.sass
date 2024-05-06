@@ -1,0 +1,125 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.form
+  display: flex
+  gap: 16px
+  +screen($tablet-sm)
+    flex-direction: column
+
+  &__container
+    border-radius: 8px
+    padding: 40px
+    width: 100%
+    background-color: $bg-grey
+    display: flex
+    gap: 20px
+    +screen($tablet)
+      padding: 32px 16px
+      flex-direction: column
+
+  &__left
+    width: 50%
+    display: flex
+    flex-direction: column
+    gap: 8px
+    +screen($tablet)
+      width: 100%
+
+  &__title
+    +font(28px, 36px, 400)
+    +screen($tablet-sm)
+      +font(24px, 32px, 400)
+
+  &_text
+    +font(18px, 24px, 400)
+
+  &__right
+    width: 50%
+    display: flex
+    flex-direction: column
+    gap: 12px
+    +screen($tablet)
+      width: 100%
+
+  &__input
+    transition: border ease 0.3s
+    border: 2px solid transparent
+    position: relative
+    width: 100%
+    max-width: 435px
+    padding: 12px
+    background-color: $bg-white
+    border-radius: 4px
+    color: $text-black
+    display: flex
+    gap: 8px
+    align-items: center
+    +screen($tablet)
+      max-width: 100%
+
+    input
+      transition: transform  ease 0.3s
+
+    &:focus-within
+      .form__input-label
+        transform: translate(-16px, -12px) scale(0.8)
+        color: $text-black
+      input
+        transform: translateY(8px)
+
+    +screen($tablet-sm)
+      max-width: 100%
+
+    input
+      +font(20px, 24px, 400)
+      &.active
+        transform: translateY(8px)
+
+    &-label
+      pointer-events: none
+      transition: transform ease 0.3s, color ease 0.3s
+      position: absolute
+      color: $text-grey
+
+      &.active
+        transform: translate(-16px, -12px) scale(0.8)
+        color: $text-black
+
+
+
+    &.error
+      border: 2px  solid $status-error
+      .form__input-label
+        color: $status-error
+
+      .icon
+        stroke: $status-error
+
+
+  &__button
+    +font(20px, 24px,  400)
+    background-color: $button-primary-default
+    padding: 12px
+    color: $text-white
+    border-radius: 4px
+    width: 200px
+    transition: background-color ease 0.3s
+    +mb-screen($tablet-sm)
+      &:hover
+        background-color: $button-primary-hover
+    +screen($tablet-sm)
+      width: 100%
+
+
+  &__privacy
+    +font(14px, 20px, 400)
+    display: flex
+    flex-direction: column
+    gap: 4px
+    +screen($tablet-sm)
+      display: inline
+
+    &-link
+      display: inline
+      text-decoration: underline

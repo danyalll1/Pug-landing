@@ -1,0 +1,18 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.catalog
+  padding-top: 160px
+  +screen($tablet)
+    padding-top: 88px
+
+  &__title
+    +font(56px, 64px, 600)
+    margin: 40px 0
+    +screen($tablet-sm)
+      +font(32px, 40px, 600)
+
+  &__breadcrumbs
+    &-container
+      margin-top: 40px
+

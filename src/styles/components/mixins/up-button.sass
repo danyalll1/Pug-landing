@@ -1,0 +1,37 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.up-button
+  padding: 8px
+  border-radius: 4px
+  z-index: 200
+  position: fixed
+  bottom: 90px
+  right: 64px
+  background-color: $button-primary-default
+  animation: pulse 3s infinite linear
+  +screen($tablet-sm)
+    right: 16px
+    bottom: 32px
+
+    &:hover
+      background-color: $button-primary-hover
+
+  .icon
+    width: 48px
+    height: 48px
+    +screen($tablet-sm)
+      width: 32px
+      height: 32px
+
+
+
+  @keyframes pulse
+    0%
+      transform: scale(1)
+
+    50%
+      transform: scale(1.05)
+
+    60%
+      transform: scale(1)

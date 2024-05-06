@@ -1,0 +1,124 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.footer
+  margin-top: auto
+  width: 100%
+  background-color: $bg-grey
+
+  &__top
+
+    .container
+      display: flex
+      gap: 20px
+      flex-wrap: wrap
+      padding-bottom: 64px
+      padding-top: 64px
+      row-gap: 64px
+      +screen($tablet-sm)
+        row-gap: 32px
+
+    &-about
+      max-width: 700px
+      display: flex
+      gap: 20px
+      flex-direction: column
+
+    &-text
+      +font(16px, 20px, 400)
+
+    &-contacts
+      max-width: 700px
+      gap: 20px
+      display: grid
+      grid-template-columns: repeat(2,minmax(328px,334px))
+      +screen($tablet-sm)
+        grid-template-columns: 328px
+
+
+    &-contact
+      max-width: 340px
+      display: flex
+      gap: 8px
+      align-items: center
+
+      .icon
+        &.icon_sm
+          min-width: 24px
+
+    &-title
+      +font(24px, 32px, 500)
+
+    &-links
+      transition: color ease 0.3s
+      max-width: 700px
+      margin-top: 20px
+      display: flex
+      flex-wrap: wrap
+      row-gap: 12px
+      column-gap: 20px
+
+    &-link
+      height: 100%
+      align-items: flex-start
+      gap: 8px
+      display: flex
+      +font(18px, 24px, 400)
+      max-width: 340px
+      width: 100%
+
+    +mb-screen($tablet-sm)
+      a
+        &:hover
+          color: $text-orange
+
+  &__bottom
+    border-top: 1px solid #808080
+
+    .container
+      padding-top: 26px
+      padding-bottom: 26px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      +screen($tablet)
+        flex-direction: column
+        align-items: flex-start
+        gap: 20px
+
+    &-rights
+      +font(16px, 20px, 400)
+
+    &-links
+      display: flex
+      gap: 40px
+      +screen($tablet)
+        gap: 20px
+        flex-direction: column
+        align-items: flex-start
+
+      a
+        +font(16px, 20px, 400)
+        +mb-screen($tablet-sm)
+          &:hover
+            color: $text-orange
+
+    &-socials
+      display: flex
+      gap: 8px
+      .icon
+        fill: $text-black
+      a
+        +mb-screen($tablet-sm)
+          &:hover
+            .icon
+              fill: $text-orange
+              stroke: $text-orange
+
+
+
+
+
+
+
+

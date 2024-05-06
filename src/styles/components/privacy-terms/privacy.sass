@@ -1,0 +1,39 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.privacy
+  margin-top: 160px
+  +screen($tablet)
+    margin-top: 88px
+
+  &__breadcrumbs
+    margin-top: 40px
+
+  &__title
+
+    &-container
+      margin-top: 40px
+      display: flex
+      justify-content: space-between
+      gap: 20px
+      align-items: center
+      +screen($tablet-sm)
+        align-items: flex-start
+        flex-direction: column
+
+  &__block
+    margin-top: 32px
+    +screen($tablet-sm)
+      margin-top: 40px
+
+  &__subtitle
+    margin-top: 32px
+    +font(24px, 32px, 500)
+    &:first-of-type(h3)
+      margin-top: 0
+
+  &__text
+    +font(18px,  24px, 400)
+    margin-top: 12px
+    &:first-of-type(p)
+      margin-top: 20px

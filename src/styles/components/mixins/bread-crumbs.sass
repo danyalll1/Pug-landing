@@ -1,0 +1,46 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.breadcrumbs
+  width: max-content
+  display: flex
+  align-items: center
+  gap: 4px
+
+  &__container
+    +screen($tablet-sm)
+      overflow-x: scroll
+
+  &__item
+    display: flex
+    align-items: center
+
+    &-link
+      display: flex
+      align-items: center
+      +mb-screen($tablet-sm+1)
+        &:hover
+          color: $text-orange
+
+    &:last-child
+      pointer-events: none
+
+  .icon
+    &_home
+      stroke: $icon-grey
+      fill: transparent
+      width: 24px
+      height: 24px
+      +mb-screen($tablet-sm)
+        &:hover
+          stroke: $text-orange
+          fill: $text-orange
+
+    &:last-child
+      display: none
+
+
+
+
+
+

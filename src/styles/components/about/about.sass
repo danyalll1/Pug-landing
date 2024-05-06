@@ -1,0 +1,111 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.about
+  margin-top:  160px
+  +screen($tablet)
+    margin-top: 98px
+  &__container
+    max-width: 940px
+  &__breadcrumbs
+    margin-top: 40px
+
+  .section-title
+    margin-top: 40px
+
+  &__img
+    width: 100%
+    margin-top: 40px
+    object-fit: cover
+    border-radius: 8px
+    object-position: center
+    max-height: 400px
+
+  &__block
+    margin-top: 40px
+
+    &-title
+      +font(24px, 32px, 500)
+
+    &-text
+      margin-top: 12px
+      +font(18px, 24px, 400)
+      &:first-child
+        margin-top: 20px
+
+    &-list
+      margin-top: 12px
+
+    &-item
+      +font(18px, 24px, 400)
+      padding-left: 23px
+      margin-top: 12px
+      position: relative
+      &:first-child
+        margin-top: 0
+      &:before
+        content: ''
+        left: 0
+        top: 9px
+        position: absolute
+        width: 15px
+        height: 2px
+        background-color: $button-primary-default
+
+  &__presentation
+    margin-top: 40px
+    background: $bg-grey
+    border-radius: 8px
+    align-items: center
+    width: 100%
+    padding: 40px
+    display: flex
+    gap: 40px
+    justify-content: space-between
+    +screen($tablet-sm)
+      padding: 20px
+      flex-direction: column
+
+    &-logo
+      height: 100px
+      width: 200px
+      .icon
+        height: 100px
+        width: 200px
+      +screen($tablet-sm)
+        .icon
+          height: 176px
+          width: 288px
+
+    &-title
+      max-width: 324px
+      +font(24px, 32px, 500)
+      text-align: left
+      +screen($tablet-sm)
+        text-align: center
+
+    &-action
+      max-width: 256px
+      +font(18px, 24px, 400)
+      border-radius: 4px
+      display: flex
+      align-items: center
+      gap: 8px
+      padding: 12px 20px
+      background-color: $button-primary-default
+      color: $text-white
+      +mb-screen($tablet-sm+1)
+        &:hover:not(:active)
+          background-color: $button-primary-hover
+      +screen($tablet-sm)
+        justify-content: center
+        width: 100%
+        max-width: 100%
+
+      .icon
+        fill: none
+        stroke: $text-white
+
+  &-form
+    margin-top: 64px
+

@@ -1,0 +1,53 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.news-nested
+  margin-top: 160px
+
+  +screen($tablet)
+    margin-top: 98px
+
+  &__breadcrumbs
+    margin-top: 40px
+
+  &__container
+    margin-top: 40px
+    max-width: 940px
+
+  &__banner
+    width: 100%
+    border-radius: 8px
+    object-fit: cover
+    object-position: center
+    max-height: 400px
+
+  &__list, ul
+    margin-top: 12px
+    +font(18px, 24px, 400)
+
+  &__item, li
+    position: relative
+    padding-left: 23px
+    margin-top: 12px
+    +font(18px, 24px, 400)
+
+    &:before
+      top: 9px
+      left: 0
+      content: ''
+      position: absolute
+      width: 15px
+      height: 2px
+      background-color: $button-primary-default
+
+    &:after
+      content: ','
+
+  &__title, h3
+    +font(24px, 32px, 500)
+    margin-top: 40px
+
+  &__text, p
+    margin-top: 20px
+    +font(18px, 24px, 400)
+

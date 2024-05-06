@@ -1,0 +1,366 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.header
+  transition: background-color ease 0.3s, transform ease 0.3s
+  background-color: $bg-white
+  position: fixed
+  width: 100%
+  max-height: 160px
+  z-index: 100
+
+  &:after
+    transition: width ease-in-out 0.3s
+    transform: translateY(-2px)
+    position: absolute
+    height: 2px
+    background-color: $text-disabled
+    content: ''
+    width: 100%
+
+  .icon
+    width: 32px
+    height: 32px
+
+    &_sm
+      fill: transparent
+      stroke: $text-black
+      width: 24px
+      height: 24px
+
+  .container
+    display: flex
+    flex-direction: column
+
+  &__top
+    transition: color ease 0.3s
+    align-items: center
+    height: 64px
+    display: flex
+    justify-content: space-between
+
+  &__bottom
+    width: 100%
+    display: flex
+    align-items: center
+    height: 96px
+    gap: 32px
+    justify-content: space-between
+
+    &-right
+      display: flex
+      gap: 12px
+      align-items: center
+
+      a
+        display: flex
+        align-items: center
+        +mb-screen($tablet-sm)
+          &:hover
+            .icon
+              fill: $button-primary-default
+              stroke: $button-primary-default
+
+  &__menu
+    display: flex
+    gap: 32px
+
+    &_mobile
+      background-color: $bg-white
+      transition: transform ease-in-out 0.2s
+      width: 100%
+      padding: 40px 0 50px
+      position: fixed
+      overflow-y:  scroll
+      left: 0
+      top: 88px
+      display: flex
+      flex-direction: column
+      transform: translate(+100%)
+      bottom: 0
+      &::-webkit-scrollbar
+        width: 10px
+      &::-webkit-scrollbar-track
+        background-color: transparent
+      &::-webkit-scrollbar-thumb
+        background-color: #808080
+        border-radius: 5px
+
+
+      &.active
+        transform: translate(0)
+
+    &-top
+      display: flex
+      flex-direction: column
+      padding-bottom: 32px
+      border-bottom: 1px solid $text-grey
+
+      a
+        +font(18px,  24px, 400)
+        padding: 0 16px
+        display: flex
+        align-items: center
+        gap: 8px
+
+    &-bottom
+      padding: 32px 16px 0
+      display: flex
+      flex-direction: column
+      gap: 20px
+      border-top: 1px solid #808080
+
+    &-callme
+      padding: 0 16px
+      display: flex
+      gap: 8px
+      margin-top: 20px
+      align-items: center
+      +font(18px, 24px, 400)
+
+    &-block
+      .menu__block
+        &-items
+          padding: 0 16px
+          margin-top: 20px
+          display: flex
+          flex-direction: column
+          gap: 12px
+
+        &-item
+          +font(18px, 24px, 400)
+          +mb-screen($tablet-sm)
+            &:hover
+              a
+                color: $text-orange
+
+    &-title
+      +font(22px, 28px, 500)
+      padding: 0 16px
+
+    &-item
+      position: relative
+      +font(18px, 24px, 400)
+      &:after
+        transition: width ease-in-out 0.3s
+        bottom: 0
+        left: 0
+        content: ''
+        position: absolute
+        width: 0
+        height: 1px
+        background-color: $text-black
+      &:hover
+        &:after
+          width: 100%
+
+    &-mail
+      a
+        +font(18px, 24px, 400)
+        display: flex
+        gap: 8px
+        align-items: center
+
+    &-schedule
+      +font(18px, 24px, 400)
+      display: flex
+      align-items: center
+      gap: 8px
+
+    &-location
+      +font(18px, 24px, 400)
+      display: flex
+      gap: 8px
+
+    &-socials
+      display: flex
+      gap: 24px
+      align-items: center
+      a
+        .icon
+          fill: $icon-grey
+          stroke: none
+
+  &__contacts
+    display: flex
+    gap: 32px
+    align-items: center
+
+  &__social
+    display: flex
+    gap: 12px
+    align-items: center
+    a
+      .icon
+        fill: $icon-grey
+        stroke: none
+        transition: fill ease 0.3s
+
+      &:hover
+        .icon
+          fill: $button-primary-default
+
+  &__phone
+    display: flex
+    align-items: center
+    gap: 8px
+    position: relative
+    +font(18px,  24px, 400)
+    a
+      &:after
+        transition: width ease-in-out 0.3s
+        bottom: 0
+        left: 0
+        content: ''
+        position: absolute
+        width: 0
+        height: 1px
+        background-color: $text-black
+      &:hover
+        &:after
+          width: 100%
+
+    &-text
+      transition: color ease 0.3s
+      +font(14px, 20px, 400)
+      color: $text-black
+      text-align: end
+      margin-top: 2px
+      &:hover
+        color: $text-orange
+
+  &__mail
+    display: flex
+    gap: 8px
+    align-items: center
+    position: relative
+    a
+      &:after
+        transition: width ease-in-out 0.3s
+        bottom: 0
+        left: 0
+        content: ''
+        position: absolute
+        width: 0
+        height: 1px
+        background-color: $text-black
+      &:hover
+        &:after
+          width: 100%
+
+  &__container
+    +screen($tablet)
+      display: none
+
+    &_mobile
+      display: none
+      +screen($tablet)
+        display: flex
+
+      .header__bottom
+        height: 88px
+
+  &__burger
+    cursor: pointer
+    position: relative
+    height: 32px
+    width: 32px
+    padding: 8px 3px
+
+    +mb-screen($tablet-sm)
+      &:hover
+        .header__burger-line
+          background-color: $button-primary-default
+
+    &-line
+      transition: background-color ease 0.3s , top ease-in 0.2s, bottom ease-in 0.2s, transform ease-in  0.2s, width ease-in 0.2s
+      position: absolute
+      width: 26px
+      border-radius: 10px
+      height: 2px
+      background-color: $text-black
+
+      &_top
+        top: 8px
+
+      &_middle
+        top: 13.5px
+
+      &_bottom
+        bottom: 10px
+
+    &.active
+      .header__burger-line
+
+        &_top
+          transform: rotate(45deg)
+          top: 15px
+
+        &_middle
+          width: 0
+
+        &_bottom
+          bottom: 15px
+          transform: rotate(-45deg)
+
+  //для главной страницы index
+
+  &.header_main-section
+    +mb-screen($tablet+1)
+      background-color: transparent
+
+      &:after
+        background-color: transparent
+
+      .header
+
+        &__top
+          color: $text-white
+
+        &__menu-item
+          color: $text-white
+          &:after
+            background-color: $text-white
+
+        &__mail, &__phone, &__social
+          a
+            color: $text-white
+
+          .icon
+            stroke: $text-white
+
+          &-text
+            color: $text-white
+
+        &__social
+
+          .icon
+            fill: $text-white
+
+        &__mail, &__phone
+          a
+            &:after
+              background-color: $text-white
+
+        &__social
+          a
+            &:hover
+              .icon
+                stroke: $button-primary-default
+                fill: $button-primary-default
+
+        &__logo
+          svg
+            path
+              fill: $text-white
+
+  &.header_hidden
+    transform: translateY(-160px)
+
+
+
+
+
+
+
+

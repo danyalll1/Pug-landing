@@ -1,0 +1,16 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.catalog-desc
+  margin-top: 40px
+
+  &__container
+    max-width: 940px
+
+  &__title
+    +font(24px, 32px, 500)
+  &__text
+    +font(18px, 24px, 400)
+    margin-top: 12px
+    &:first-child
+      margin-top: 20px

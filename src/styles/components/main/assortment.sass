@@ -1,0 +1,109 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.assortment
+  margin-top: 128px
+  +screen($tablet-sm)
+    margin-top: 64px
+
+  .container
+    display: flex
+    flex-direction: column
+    gap: 64px
+    +screen($tablet-sm)
+      gap: 40px
+
+  &__top
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+  &__category
+    +font(28px, 36px, 400)
+    +screen($tablet-sm)
+      display: none
+
+  &__title
+    +font(56px, 64px, 600)
+    +screen($tablet-sm)
+      +font(32px, 40px, 600)
+
+    &-container
+      width: 50%
+      display: flex
+      flex-direction: column
+      gap: 24px
+      +screen($tablet-sm)
+        width: 100%
+
+    &-about
+      +font(24px, 32px, 500)
+
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+
+  &__card
+    transition: background-color ease 0.3s, border ease 0.3s
+    padding: 20px
+    cursor: pointer
+    position: relative
+    height: 340px
+    width: 340px
+    background-color: $bg-grey
+    display: flex
+    flex-direction: column
+    gap: 20px
+    border-radius: 8px
+    border: 2px solid transparent
+    +screen(1080)
+      width: calc(50% - 10px)
+    +screen($tablet-sm)
+      width: 100%
+    +mb-screen($tablet-sm+1)
+      &:hover
+        background-color: transparent
+        border: 2px solid $bg-grey
+
+    &:nth-child(4), &:nth-child(6n+3)
+      width: calc(100% - 720px)
+      min-width: 340px
+      +screen(1080)
+        width: calc(50% - 10px)
+      +screen($tablet-sm)
+        width: 100%
+
+    .icon
+      position: absolute
+      right: 20px
+      top: 20px
+
+    &-img
+      mix-blend-mode: multiply
+      object-fit: contain
+      max-height: 264px
+      height: 100%
+
+    &-text
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+
+    &-name
+      +font(18px, 24px, 400)
+
+    &-id
+      +font(18px, 24px, 400)
+
+  &__more
+    padding: 12px
+    width: 100%
+    +font(20px, 24px, 400)
+    display: none
+    text-align: center
+    +screen($tablet-sm)
+      display: block
+
+
+

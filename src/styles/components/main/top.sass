@@ -1,0 +1,56 @@
+@use '../../abstracts/variables' as *
+@use '../../abstracts/mixins' as *
+
+.top-section
+  background: radial-gradient(100% 100% at 50% 0%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.40) 100%), url("/src/assets/img/main/top/top.webp") no-repeat center
+  background-size: cover
+  height: 998px
+  +screen($tablet-sm)
+    height: 544px
+
+  .container
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+  &__title
+    color: $text-white
+    span
+      +font(88px, 96px, 900)
+    +font(88px,96px, 400)
+    +screen($tablet-sm)
+      +font(40px, 48px, 400)
+      span
+        +font(40px, 48px, 700)
+
+  &__link
+    margin-top: 40px
+    cursor: pointer
+    justify-content: center
+    +font(20px, 24px, 400)
+    background-color: $button-primary-default
+    padding: 12px
+    max-width: 279px
+    width: 100%
+    color: $text-white
+    display: flex
+    align-items: center
+    gap: 8px
+    border-radius: 4px
+    +mb-screen($tablet-sm+1)
+      &:hover
+        background-color: $button-primary-hover
+
+    +screen($tablet-sm)
+      max-width: 100%
+
+    .icon
+      height: 16px
+      stroke: $text-white
+      fill: $text-white
+
+
+
+
+
