@@ -1,0 +1,37 @@
+.question-form__container
+    form.question-form(name="question")
+        .question-form__title Остались вопросы?
+        .question-form__subtitle Оставьте заявку на бесплатную консультацию специалиста
+        div
+            .question-form__input-area.active.error
+                input.question-form__input(type="text")
+                label.question-form__input-label Имя *
+                svg.icon.icon
+                    use(href="/src/assets/img/sprite.svg#User")
+            .question-form__input-area
+                input.question-form__input(type="tel")
+                label.question-form__input-label Номер телефона *
+                svg.icon
+                    use(href="/src/assets/img/sprite.svg#Phone")
+            .question-form__input-area
+                input.question-form__input(type="email")
+                label.question-form__input-label Электронная почта
+                svg.icon
+                    use(href="/src/assets/img/sprite.svg#Mail")
+        button.question-form__button(type='button') Отправить
+        .question-form__terms
+            |Нажимая кнопку «Отправить», вы соглашаетесь с
+            |
+            a.question-form__terms-link политикой обработки персональных данных
+        .question-form__close
+            svg.icon
+                use(href='/src/assets/img/sprite.svg#close')
+    .question-form__success-container
+        .question-form__success-image
+            svg.icon
+                use(href='/src/assets/img/sprite.svg#success')
+        .question-form__success-title Спасибо за заявку!
+        .question-form__success-subtitle Мы свяжемся с Вами в ближайшее время
+        .question-form__close
+            svg.icon
+                use(href='/src/assets/img/sprite.svg#close')
