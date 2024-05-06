@@ -1,0 +1,14 @@
+mixin bread-crumbs(items)
+    .breadcrumbs__container
+        .breadcrumbs
+            .breadcrumbs__item
+                a.breadcrumbs__item-link(href="/")
+                    svg.icon_home
+                        use(href='/src/assets/img/sprite.svg#home')
+            each item in items
+                .breadcrumbs__item
+                    svg.icon
+                        use(href='/src/assets/img/sprite.svg#arrow-right')
+                    a.breadcrumbs__item-link(href=item.link) !{item.text}
+
+

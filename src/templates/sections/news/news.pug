@@ -1,0 +1,36 @@
+-
+    n = [1,1,1,1,1,1,1,1,1]
+
+section.news
+    .container
+        .news__breadcrumbs
+            +bread-crumbs(newsBreadcrumbs)
+        h2.section-title Новости
+        .news__grid
+            each val in n
+                article.news__card
+                    img.news__card-image(src="/src/assets/img/about/about.webp" alt="Новость")
+                    .news__card-desc
+                        time(datetime="2024-03-18").news__card-date 18.03.2024
+                        h3.news__card-title Новое поступление: тормозные колодки «HARBINGER™»
+                        p.news__card-text
+                            |Мы пополнили наш склад новыми тормозными колодками от HARBINGER для европейских и американских грузовиков!
+                        a.news__card-btn(href="/news-nested")
+                            |Подробнее
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#Arrow_Up_Right_MD")
+        form.catalog-nested__more
+            button.catalog-nested__more-btn Показать ещё
+            .catalog-nested__pagination
+                btn.catalog-nested__pagination-btn(id="prev")
+                    svg.icon
+                        use(href="/src/assets/img/sprite.svg#Chevron_Left")
+                btn.catalog-nested__pagination-btn.active 1
+                btn.catalog-nested__pagination-btn 2
+                btn.catalog-nested__pagination-btn 3
+                btn.catalog-nested__pagination-btn 4
+                btn.catalog-nested__pagination-btn ...
+                btn.catalog-nested__pagination-btn(id="last") 999
+                btn.catalog-nested__pagination-btn(id="next")
+                    svg.icon
+                        use(href="/src/assets/img/sprite.svg#Chevron_Right")

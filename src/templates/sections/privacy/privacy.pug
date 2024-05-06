@@ -1,0 +1,12 @@
+section.privacy
+    .container
+        .privacy__breadcrumbs
+            +bread-crumbs(privacyBreadCrumbs)
+        .privacy__title-container
+            h2.section-title.privacy__title Пользовательское соглашение
+            time.privacy__time от «7» декабря 2021г.
+        .privacy__block
+            each  item in policyList
+                h3.privacy__subtitle !{item.title}
+                each text in item.txt
+                    p.privacy__text !{text}

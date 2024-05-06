@@ -1,0 +1,17 @@
+mixin contact-form
+    .form__container
+        .form__left
+            .form__title Подпишитесь на новостную рассылку
+            .form__text Мы оповестим вас об интересующих товарах и скидках на них!
+        .form__right
+            form.form
+                .form__input
+                    .form__input-label Электронная почта
+                    input.form__input-field()
+                    svg.icon
+                        use(href="/src/assets/img/sprite.svg#Mail")
+                button.form__button Подписаться
+            .form__privacy
+                | Нажимая кнопку «Подписаться», вы соглашаетесь с
+                |
+                a.form__privacy-link(href="/") политикой обработки персональных данных

@@ -1,0 +1,58 @@
+mixin main-grid(items,more,links)
+    .main-grid__grid
+        if(links)
+            each card in items
+                a.main-grid__card.main-grid__card_link(href="javascript:")
+                    if(links)
+                        svg.icon
+                            use(href="/src/assets/img/sprite.svg#Arrow_Up_Right_MD")
+                    img.main-grid__card-img(src=card.img)
+                    .main-grid__card-text
+                        if(card.name)
+                            .main-grid__card-name !{card.name}
+                        if(card.id)
+                            .main-grid__card-id [!{card.id}]
+        else
+            each card in items
+                if(card.img)
+                    .main-grid__card.main-grid__card_image
+                        if(links)
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#Arrow_Up_Right_MD")
+                        if(card.title)
+                            .main-grid__card-title !{card.title}
+                        if(card.highlight)
+                            .main-grid__card-highlight !{card.highlight}
+                        if(card.img)
+                            img.main-grid__card-img.main-grid__card-img_large(src=card.img)
+                        if(card.name)
+                            .main-grid__card-name !{card.name}
+                        if(card.id)
+                            .main-grid__card-id [!{card.id}]
+                        if(card.text && card.highlight)
+                            .main-grid__card-text.main-grid__card-text_large !{card.text}
+                        else
+                            if(card.text)
+                                .main-grid__card-text !{card.text}
+                else
+                    .main-grid__card
+                        if(links)
+                            svg.icon
+                                use(href="/src/assets/img/sprite.svg#Arrow_Up_Right_MD")
+                        if(card.title)
+                            .main-grid__card-title !{card.title}
+                        if(card.highlight)
+                            .main-grid__card-highlight !{card.highlight}
+                        if(card.img)
+                            img.main-grid__card-img.main-grid__card-img_large(src=card.img)
+                        if(card.name)
+                            .main-grid__card-name !{card.name}
+                        if(card.id)
+                            .main-grid__card-id [!{card.id}]
+                        if(card.text && card.highlight)
+                            .main-grid__card-text.main-grid__card-text_large !{card.text}
+                        else
+                            if(card.text)
+                                .main-grid__card-text !{card.text}
+    if (more)
+        a.main-grid__more(href="/catalog") Больше запчастей

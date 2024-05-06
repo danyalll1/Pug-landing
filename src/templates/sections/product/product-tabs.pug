@@ -1,0 +1,20 @@
+section.product-tabs
+    .container
+        .product-tabs__container
+            .product-tabs__buttons
+                button.product-tabs__button.active(data-optionID ="description") Описание товара
+                button.product-tabs__button(data-optionID="characteristics") Характеристики
+            .product-tabs__description.active(data-optionID="description")
+                h3.product-tabs__description-title Радиаторы и интеркулеры
+                p.product-tabs__description-text Производство радиаторов HARBINGER расположено в Китае. Площадь завода составляет 50 000 м2, а численность сотрудников более 300 человек.
+                p.product-tabs__description-text Предприятие изготавливает более 10 000 модификаций деталей, охватывающих радиаторы, конденсаторы, интеркулеры и компоненты теплообменника.
+                p.product-tabs__description-text На территории производства размещены испытательная лаборатория и отдел автоматизации, что обеспечивает соответствие международным стандартам качества, производства, материалов и процессов.
+                p.product-tabs__description-text 100% продукции проверяется на герметичность. Покрытие изделий маслобензостойкое, радиаторы и конденсоры устойчивы к коррозии.
+            .product-tabs__characteristics(data-optionID="characteristics")
+                h3.product-tabs__characteristics-title Характеристики товара:
+                ul.product-tabs__characteristics-list
+                    each item in productSpecs
+                        li.product-tabs__characteristics-item
+                            .product-tabs__characteristics-spec !{item.spec}
+                            span
+                            .product-tabs__characteristics-value !{item.value}
